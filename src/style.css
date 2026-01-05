@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-slate-950 text-slate-400 font-sans antialiased min-h-screen relative selection:bg-slate-700 selection:text-white;
+    }
+}
+
+@layer components {
+    .glass-panel {
+        @apply bg-slate-900/80 backdrop-blur-xl border-r border-white/5 border-b;
+    }
+
+    .glass-card {
+        @apply bg-slate-800/40 backdrop-blur-xl border border-white/5 transition-all duration-300 hover:border-white/10 hover:bg-slate-800/60;
+    }
+
+    .input-minimal {
+        @apply focus:outline-none focus:border-white/20 focus:bg-slate-800/80;
+    }
+
+    .text-heading {
+        @apply text-slate-100;
+    }
+
+    .text-body {
+        @apply text-slate-400;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Custom Dropdowns */
+.select-options {
+    animation: fadeIn 0.15s ease-out;
+}
+
+.select-trigger:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.select-trigger.border-blue-500 {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
